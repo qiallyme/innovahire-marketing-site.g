@@ -3,70 +3,428 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InnovaHire LLC - Talent Acquisition & HR Services</title>
-    <meta name="description" content="InnovaHire specializes in talent acquisition and HR services for construction, manufacturing, and distribution companies. Recruiting, I-9 compliance, and HR systems.">
-    <link rel="stylesheet" href="styles.css">
+    <title>Innovahire LLC | Strategic Staffing & HR Consulting</title>
+    <!-- Load Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind configuration with dark masculine theme
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-slate': '#0F172A', // slate-900
+                        'brand-navy': '#1E3A8A', // blue-800
+                        'brand-accent': '#3B82F6', // blue-500
+                        'brand-light': '#E2E8F0', // slate-200
+                        'accent-gold': '#FFD700', // Gold for highlights
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-in': { '0%': { opacity: '0', transform: 'scale(0.8)' }, '100%': { opacity: '1', transform: 'scale(1)' } },
+                        'slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'fade-up-scroll': {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    animation: {
+                        'logo-in': 'fade-in 1.2s ease-out forwards', 
+                        'text-in-1': 'slide-up 1s ease-out 0.7s forwards', 
+                        'text-in-2': 'slide-up 1s ease-out 1.2s forwards', 
+                        'text-in-3': 'slide-up 1s ease-out 1.7s forwards', 
+                        'scroll-in-0': 'fade-up-scroll 0.8s ease-out forwards',
+                        'scroll-in-200': 'fade-up-scroll 0.8s ease-out 0.2s forwards',
+                        'scroll-in-400': 'fade-up-scroll 0.8s ease-out 0.4s forwards',
+                        'scroll-in-600': 'fade-up-scroll 0.8s ease-out 0.6s forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Dark masculine theme with glassmorphism */
+        body {
+            background-color: #0F172A; /* brand-slate */
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(217, 39%, 20%, 1) 0px, transparent 50%),
+                radial-gradient(at 98% 1%, hsla(240, 20%, 11%, 1) 0px, transparent 50%);
+            font-family: 'Inter', sans-serif;
+            color: #E2E8F0; /* brand-light */
+        }
+
+        /* Glassmorphism panel */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Glass navigation */
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero background with dark overlay */
+        .hero-background {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 58, 138, 0.75)), url('https://placehold.co/1920x1080/0F172A/3B82F6?text=Talent+Network');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Section separator */
+        .section-separator {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: #3B82F6; /* brand-accent */
+            border-radius: 9999px;
+            margin: 1rem 0;
+        }
+
+        /* Utility class to hide elements before animations start */
+        .initial-hidden {
+            opacity: 0;
+        }
+
+        /* Scroll animation classes */
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+        }
+        
+        .animate-on-scroll.is-visible.scroll-delay-0 { animation: fade-up-scroll 0.8s ease-out forwards; }
+        .animate-on-scroll.is-visible.scroll-delay-200 { animation: fade-up-scroll 0.8s ease-out 0.2s forwards; }
+        .animate-on-scroll.is-visible.scroll-delay-400 { animation: fade-up-scroll 0.8s ease-out 0.4s forwards; }
+        .animate-on-scroll.is-visible.scroll-delay-600 { animation: fade-up-scroll 0.8s ease-out 0.6s forwards; }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="../../2_assets/2.1_imgs/brand/logowide.png" alt="InnovaHire Logo">
-            </div>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="/kb">Knowledge Base</a></li>
-            </ul>
-        </nav>
+<body class="antialiased">
+
+    <!-- Navigation Bar -->
+    <header class="glass-nav fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <!-- Logo in Nav Bar -->
+            <a href="#" class="flex items-center space-x-2">
+                <img 
+                    src="https://res.cloudinary.com/dp5b5fymz/image/upload/v1759308152/logobuttonround_t1fizu.png" 
+                    alt="Innovahire LLC Logo" 
+                    class="h-10 w-10 rounded-full object-cover border border-white/20"
+                    onerror="this.onerror=null; this.src='https://placehold.co/40x40/1E3A8A/3B82F6?text=IH'"
+                >
+                <div class="hidden sm:block text-2xl font-extrabold text-white tracking-tighter">
+                    Innovahire <span class="text-brand-accent">LLC</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="text-sm font-medium text-gray-300 hover:text-brand-accent transition duration-300">Services</a>
+                <a href="#about" class="text-sm font-medium text-gray-300 hover:text-brand-accent transition duration-300">About Us</a>
+                <a href="#partners" class="text-sm font-medium text-gray-300 hover:text-brand-accent transition duration-300">Partners</a>
+                <a href="/kb" class="text-sm font-medium text-gray-300 hover:text-brand-accent transition duration-300">Knowledge Base</a>
+                <a href="#contact" class="px-4 py-2 text-sm font-semibold bg-brand-accent text-white rounded-lg shadow-md hover:bg-blue-600 transition duration-300">Contact</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-white/10">
+            <a href="#services" class="block px-4 py-3 text-gray-300 hover:bg-white/5">Services</a>
+            <a href="#about" class="block px-4 py-3 text-gray-300 hover:bg-white/5">About Us</a>
+            <a href="#partners" class="block px-4 py-3 text-gray-300 hover:bg-white/5">Partners</a>
+            <a href="/kb" class="block px-4 py-3 text-gray-300 hover:bg-white/5">Knowledge Base</a>
+            <a href="#contact" class="block px-4 py-3 m-4 bg-brand-accent text-white text-center font-medium rounded-lg shadow-md">Contact</a>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Hire Smarter, Stay Compliant, Reduce Chaos</h1>
-            <p>InnovaHire helps small to mid-sized companies in construction, manufacturing, and distribution hire top talent and build HR systems that actually work.</p>
-            <a href="#contact" class="cta-button">Get Started</a>
-        </section>
+    <!-- 1. Hero Section - With Animation -->
+    <section id="home" class="hero-background text-white py-24 md:py-32 lg:py-40 pt-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <!-- Animated Logo Container -->
+            <div class="mb-10 mx-auto w-36 h-36 initial-hidden animate-logo-in">
+                 <img 
+                    src="https://res.cloudinary.com/dp5b5fymz/image/upload/v1759308152/logobuttonround_t1fizu.png" 
+                    alt="Innovahire LLC Animated Logo" 
+                    class="w-full h-full rounded-full object-cover shadow-2xl shadow-brand-accent/50 border-4 border-brand-accent"
+                    onerror="this.onerror=null; this.src='https://placehold.co/144x144/1E3A8A/3B82F6?text=IH+Logo'"
+                >
+            </div>
 
-        <section id="services">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Talent Acquisition</h3>
-                    <p>Recruiting top talent in high-impact roles across trades, light industrial, and operations.</p>
+            <!-- Animated Headline -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight initial-hidden animate-text-in-1">
+                Hiring <span class="text-brand-accent">Transformed</span>. <br class="hidden sm:block">Talent Defined.
+            </h1>
+            
+            <!-- Animated Tagline -->
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10 opacity-90 initial-hidden animate-text-in-2">
+                Innovahire LLC is your strategic partner for human resources and staffing solutions. We connect visionary companies with exceptional talent, ensuring growth and compliance.
+            </p>
+            
+            <!-- Animated CTA Button -->
+            <a href="#contact" class="inline-block px-10 py-4 text-lg font-bold bg-brand-accent text-white rounded-xl shadow-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105 initial-hidden animate-text-in-3">
+                Start Your Consultation Today
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. Services Section - Animate on Scroll -->
+    <section id="services" class="py-20 lg:py-28">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-white mb-3 animate-on-scroll scroll-delay-0">Our Core Expertise</h2>
+            <div class="flex justify-center mb-16 animate-on-scroll scroll-delay-200">
+                <div class="section-separator"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1: Strategic Staffing -->
+                <div class="glass-panel p-6 hover:shadow-2xl transition duration-500 transform hover:-translate-y-1 border-t-4 border-brand-accent animate-on-scroll scroll-delay-200">
+                    <div class="text-4xl text-brand-accent mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Strategic Staffing</h3>
+                    <p class="text-gray-300">
+                        We specialize in identifying, vetting, and placing the perfect candidates for your critical roles, from temporary placements to executive searches.
+                    </p>
                 </div>
-                <div class="service-card">
-                    <h3>HR Systems Design</h3>
-                    <p>Designing HR systems that actually work in fast-paced environments.</p>
+
+                <!-- Service 2: HR Consulting & Compliance -->
+                <div class="glass-panel p-6 hover:shadow-2xl transition duration-500 transform hover:-translate-y-1 border-t-4 border-brand-accent animate-on-scroll scroll-delay-400">
+                    <div class="text-4xl text-brand-accent mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.518 23.518 0 0112 15c-3.18 0-6.233-.62-9-1.745M16 8V6a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m-6 5h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">HR Consulting & Compliance</h3>
+                    <p class="text-gray-300">
+                        Stay compliant and build a better workplace. We offer expertise in policy development, employee handbooks, and regulatory adherence.
+                    </p>
                 </div>
-                <div class="service-card">
-                    <h3>I-9 Compliance</h3>
-                    <p>Specializing in I-9 compliance and audit protection — no shortcuts on employment law.</p>
-                </div>
-                <div class="service-card">
-                    <h3>AI & Automation</h3>
-                    <p>Using AI and automation to streamline onboarding, documentation, and follow-through.</p>
+
+                <!-- Service 3: Workforce Strategy -->
+                <div class="glass-panel p-6 hover:shadow-2xl transition duration-500 transform hover:-translate-y-1 border-t-4 border-brand-accent animate-on-scroll scroll-delay-600">
+                    <div class="text-4xl text-brand-accent mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Workforce Strategy</h3>
+                    <p class="text-gray-300">
+                        Future-proof your organization. We help design long-term talent acquisition strategies, performance management systems, and retention plans.
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="about">
-            <h2>About InnovaHire</h2>
-            <p>Founded by Luis Muñoz Altamirano, InnovaHire LLC brings together talent acquisition expertise with a deep understanding of the construction, manufacturing, and distribution industries.</p>
-            <p>We've supported contractors doing $60M+ in revenue and helped develop HR infrastructure from the ground up.</p>
-        </section>
+    <!-- 3. Why Choose Innovahire Section - Animate on Scroll -->
+    <section id="about" class="py-20 lg:py-28 bg-brand-navy/40">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-3 text-white animate-on-scroll scroll-delay-0">The Innovahire Difference</h2>
+            <div class="flex justify-center mb-16 animate-on-scroll scroll-delay-200">
+                <div class="section-separator"></div>
+            </div>
 
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <p>Ready to transform your hiring process? Let's talk.</p>
-            <p><a href="https://www.linkedin.com/in/luis-e-mu%C3%B1oz-altamirano-28lm/">Connect on LinkedIn</a></p>
-        </section>
-    </main>
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Value 1: Data-Driven -->
+                <div class="glass-panel p-6 animate-on-scroll scroll-delay-200">
+                    <div class="text-5xl text-brand-accent mb-4 mx-auto">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-3.75-3.75M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Innovation & Data</h3>
+                    <p class="text-gray-300 text-sm">
+                        We leverage proprietary analytics and market intelligence to make staffing and HR decisions that are smart, efficient, and forward-looking.
+                    </p>
+                </div>
 
-    <footer>
-        <p>&copy; 2025 InnovaHire LLC. All rights reserved.</p>
+                <!-- Value 2: True Partnership -->
+                <div class="glass-panel p-6 animate-on-scroll scroll-delay-400">
+                    <div class="text-5xl text-brand-accent mb-4 mx-auto">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">True Partnership</h3>
+                    <p class="text-gray-300 text-sm">
+                        You're not just a client—you're a partner. We embed ourselves in your culture to understand your needs on a deeper level.
+                    </p>
+                </div>
+
+                <!-- Value 3: Guaranteed Results -->
+                <div class="glass-panel p-6 animate-on-scroll scroll-delay-600">
+                    <div class="text-5xl text-brand-accent mb-4 mx-auto">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Guaranteed Results</h3>
+                    <p class="text-gray-300 text-sm">
+                        Our confidence in our network and methodology allows us to deliver measurable results that impact your bottom line directly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Strategic Partners Section - Animate on Scroll -->
+    <section id="partners" class="py-16 lg:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold text-gray-400 mb-10 tracking-wider uppercase animate-on-scroll scroll-delay-0">Our Strategic Alliance Network</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 items-start">
+                
+                <!-- Partner 1: QuantumInnovaPeople Inc -->
+                <div class="glass-panel p-6 border-b-4 border-brand-accent hover:shadow-2xl transition duration-300 animate-on-scroll scroll-delay-200">
+                    <h3 class="text-xl font-extrabold text-white mb-1">QuantumInnovaPeople Inc.</h3>
+                    <p class="text-sm text-gray-300 font-medium mt-2">Executive Strategy Partner</p>
+                </div>
+
+                <!-- Partner 2: QuantumHR -->
+                <div class="glass-panel p-6 border-b-4 border-brand-accent hover:shadow-2xl transition duration-300 animate-on-scroll scroll-delay-400">
+                    <h3 class="text-xl font-extrabold text-white mb-1">QuantumHR</h3>
+                    <p class="text-sm text-gray-300 font-medium mt-2">HR Implementation Team</p>
+                </div>
+
+                <!-- Partner 3: QiAlly -->
+                <div class="glass-panel p-6 border-b-4 border-brand-accent hover:shadow-2xl transition duration-300 animate-on-scroll scroll-delay-600">
+                    <h3 class="text-xl font-extrabold text-white mb-1">QiAlly</h3>
+                    <p class="text-sm text-gray-300 font-medium mt-2">CSuite Consulting & AI/IT</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CTA Banner Section - Animate on Scroll -->
+    <section class="bg-brand-accent/20 glass-panel py-16 animate-on-scroll scroll-delay-0 border-t-4 border-brand-accent">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Ready to Innovate Your Workforce?</h2>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+                Stop wasting time with outdated HR methods. Let's build the powerful team you deserve.
+            </p>
+            <a href="#contact" class="inline-block px-8 py-3 text-lg font-bold bg-brand-accent text-white rounded-lg shadow-xl hover:bg-blue-600 transition duration-300 transform hover:scale-105">
+                Request a Free Consultation
+            </a>
+        </div>
+    </section>
+
+    <!-- 6. Contact Section - Animate on Scroll -->
+    <section id="contact" class="py-20 lg:py-28">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-white mb-3 animate-on-scroll scroll-delay-0">Get In Touch</h2>
+            <div class="flex justify-center mb-16 animate-on-scroll scroll-delay-200">
+                <div class="section-separator"></div>
+            </div>
+            
+            <div class="max-w-xl mx-auto">
+                
+                <!-- Direct Contact Information for Luis -->
+                <div class="mb-10 glass-panel p-6 border-t-4 border-brand-accent animate-on-scroll scroll-delay-200">
+                    <h3 class="text-xl font-bold text-brand-accent mb-4">Luis E. Muñoz Altamirano (Head of Strategy)</h3>
+                    <div class="space-y-3 text-sm font-medium text-gray-300">
+                        <p><strong class="text-white">Email:</strong> <a href="/cdn-cgi/l/email-protection#c3afb6aab0a6aeb6adacb9faf483a4aea2aaafeda0acae" class="hover:text-brand-accent transition duration-300 underline"><span class="__cf_email__" data-cfemail="2d4158445e484058434257141a6d4a404c4441034e4240">[email&#160;protected]</span></a></p>
+                        <p><strong class="text-white">Phone:</strong> <a href="tel:+13178530057" class="hover:text-brand-accent transition duration-300 underline">+1 (317) 853-0057</a></p>
+                        <p><strong class="text-white">LinkedIn (Personal):</strong> <a href="https://www.linkedin.com/in/luis-e-mu%C3%B1oz-altamirano-28lm" target="_blank" class="hover:text-brand-accent transition duration-300 underline">Connect on LinkedIn</a></p>
+                        <p><strong class="text-white">LinkedIn (Company Group):</strong> <a href="https://www.linkedin.com/company/ausustalentgroup" target="_blank" class="hover:text-brand-accent transition duration-300 underline">Aususta Talent Group Page</a></p>
+                    </div>
+                </div>
+
+                <!-- Contact Email Section -->
+                <div class="glass-panel p-8 border-t-4 border-brand-navy animate-on-scroll scroll-delay-400 text-center">
+                    <p class="text-center text-gray-300 mb-6 text-lg">
+                        Ready to get started? Send us an email and we'll respond promptly.
+                    </p>
+                    
+                    <a href="mailto:luis@innovahire.net" class="inline-block px-10 py-4 text-lg font-bold bg-brand-accent text-white rounded-xl shadow-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105">
+                        Email Us: luis@innovahire.net
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 mt-20 md:mt-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center">
+            <!-- Main Footer Content -->
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <!-- Company Name -->
+                <p class="text-lg font-bold text-white">Innovahire <span class="text-brand-accent">LLC</span></p>
+
+                <!-- Footer Links -->
+                <div class="flex space-x-6 text-sm">
+                    <a href="#services" class="text-gray-400 hover:text-brand-accent transition duration-300">Services</a>
+                    <a href="#about" class="text-gray-400 hover:text-brand-accent transition duration-300">Privacy Policy</a>
+                    <a href="#contact" class="text-gray-400 hover:text-brand-accent transition duration-300">Careers</a>
+                    <a href="/kb" class="text-gray-400 hover:text-brand-accent transition duration-300">Knowledge Base</a>
+                </div>
+
+                <!-- Copyright -->
+                <p class="text-sm text-gray-400">
+                    &copy; 2025 Innovahire LLC. All rights reserved.
+                </p>
+            </div>
+            
+            <!-- Powered By Section -->
+            <div class="pt-6 mt-8 border-t border-white/10 text-xs text-gray-500">
+                <p>
+                    Powered by <a href="http://qially.com" target="_blank" class="text-brand-accent hover:text-blue-400 font-semibold">qially.com SaaS</a>
+                </p>
+            </div>
+        </div>
     </footer>
+    
+    <!-- JavaScript for Scroll Animations and Mobile Menu -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                
+                // Close menu when a link is clicked
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // Scroll Animations with Intersection Observer
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Find all elements marked for animation
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                element.classList.add('initial-hidden');
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
-
